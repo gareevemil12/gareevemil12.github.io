@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МАКСИМ ЗАМОРОВ — ничего не делал</title>
+<meta name="description" content="Официальный мем-сайт. Максим Заморов ничего не делал. Совсем. Ни-че-го.">
+<meta property="og:title" content="МАКСИМ ЗАМОРОВ ничего не делал">
+<meta property="og:description" content="100% подтверждённые факты безделья. Заходи и убедись сам.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😴</text></svg>">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #12121f;
+    --card: #1d1d33;
+    --txt: #f2f2fa;
+    --dim: #a3a3c2;
+    --yellow: #ffd93d;
+    --purple: #8b5cf6;
+    --pink: #ff6b9d;
+    --green: #4ade80;
+    --red: #ff6b6b;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--txt);
+    overflow-x: hidden;
+  }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- HERO ---------- */
+  header {
+    position: relative;
+    padding: 90px 0 70px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at 50% -20%, rgba(139,92,246,.35), transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(255,217,61,.12), transparent 50%);
+    overflow: hidden;
+  }
+
+  .official {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--bg);
+    background: var(--yellow);
+    padding: 5px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 20px rgba(255,217,61,.4);
+    animation: pop .5s ease-out;
+  }
+
+  h1 {
+    margin: 24px 0 10px;
+    font-size: clamp(42px, 9vw, 88px);
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #fff, var(--yellow), var(--pink), var(--purple));
+    background-size: 300% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: shine 6s linear infinite;
+    text-shadow: 0 0 60px rgba(255,217,61,.15);
+  }
+
+  .did {
+    font-size: clamp(22px, 5vw, 40px);
+    font-weight: 800;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  .did b { color: var(--red); }
+
+  .hero-sub {
+    margin: 26px auto 0;
+    max-width: 560px;
+    color: var(--dim);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .verified {
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-top: 26px;
+    font-size: 13px; font-weight: 700;
+    color: var(--green);
+    background: rgba(74,222,128,.1);
+    border: 1px solid rgba(74,222,128,.3);
+    padding: 8px 16px;
+    border-radius: 30px;
+  }
+
+  @keyframes shine { to { background-position: 300% 0; } }
+  @keyframes pop { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  /* ---------- COUNTER ---------- */
+  .counter-box {
+    margin: -34px auto 0;
+    position: relative;
+    max-width: 620px;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 22px;
+    padding: 26px 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.5);
+    text-align: center;
+  }
+  .counter-box .label { font-size: 13px; color: var(--dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+  .timer { font-size: clamp(22px, 5vw, 36px); font-weight: 900; color: var(--yellow); font-variant-numeric: tabular-nums; }
+  .timer span { color: var(--txt); font-size: .55em; font-weight: 700; }
+
+  /* ---------- STATS ---------- */
+  section { padding: 70px 0; }
+  .sec-title {
+    text-align: center;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  .sec-title em { color: var(--yellow); font-style: normal; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+  .stat {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    padding: 26px 18px;
+    text-align: center;
+    transition: transform .15s, border-color .15s;
+  }
+  .stat:hover { transform: translateY(-4px); border-color: rgba(255,217,61,.4); }
+  .stat .num { font-size: 40px; font-weight: 900; color: var(--yellow); }
+  .stat .num.red { color: var(--red); }
+  .stat .num.green { color: var(--green); }
+  .stat .num.purple { color: var(--purple); }
+  .stat .cap { margin-top: 8px; font-size: 13px; color: var(--dim); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ---------- PROGRESS ---------- */
+  .progress-block { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 22px; padding: 34px 28px; text-align: center; }
+  .progress-title { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+  .progress-sub { font-size: 13px; color: var(--dim); margin-bottom: 22px; }
+  .bar { height: 26px; background: rgba(255,255,255,.07); border-radius: 14px; overflow: hidden; position: relative; }
+  .bar-fill {
+    height: 100%; width: 0%;
+    background: repeating-linear-gradient(45deg, var(--purple), var(--purple) 12px, #7c4ef0 12px, #7c4ef0 24px);
+    border-radius: 14px;
+    animation: tryhard 3s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(139,92,246,.5);
+  }
+  .bar-pct { margin-top: 12px; font-size: 15px; font-weight: 800; color: var(--purple); }
+  @keyframes tryhard { 0%,100% { width: 0%; } 30% { width: 3%; } 55% { width: 2%; } 80% { width: 0%; } }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline { display: flex; flex-direction: column; gap: 14px; max-width: 640px; margin: 0 auto; }
+  .tl-item {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    padding: 18px 20px;
+  }
+  .tl-time { min-width: 78px; font-weight: 900; color: var(--yellow); font-size: 15px; }
+  .tl-txt { color: #d9d9ee; font-size: 15px; line-height: 1.55; }
+  .tl-txt b { color: var(--txt); }
+
+  /* ---------- QUOTES ---------- */
+  .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .quote {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    padding: 26px 24px;
+    position: relative;
+  }
+  .quote::before {
+    content: "“";
+    position: absolute; top: 6px; left: 16px;
+    font-size: 60px; font-weight: 900; color: rgba(255,217,61,.25);
+    font-family: Georgia, serif;
+  }
+  .quote p { font-size: 16px; line-height: 1.6; color: #e4e4f5; margin-bottom: 14px; }
+  .quote .author { font-size: 13px; font-weight: 700; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ---------- CERTIFICATE ---------- */
+  .cert {
+    max-width: 640px; margin: 0 auto;
+    background: linear-gradient(160deg, #fbf3d5, #f3e3b3);
+    color: #3a3010;
+    border-radius: 14px;
+    padding: 44px 36px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,.45), inset 0 0 0 8px #fbf3d5, inset 0 0 0 10px #c9a83c;
+    transform: rotate(-1deg);
+  }
+  .cert .medal { font-size: 54px; }
+  .cert h3 { font-size: 26px; font-weight: 900; letter-spacing: 2px; margin: 10px 0 4px; text-transform: uppercase; }
+  .cert .sub { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #7a683a; }
+  .cert .name { font-size: 34px; font-weight: 900; margin: 18px 0; letter-spacing: 1px; border-bottom: 2px dashed #c9a83c; display: inline-block; padding-bottom: 4px; }
+  .cert .txt { font-size: 15px; line-height: 1.65; max-width: 460px; margin: 0 auto; }
+  .cert .stamp {
+    margin-top: 22px; display: inline-block;
+    border: 3px solid #b3392f; color: #b3392f;
+    font-weight: 900; font-size: 15px; letter-spacing: 2px;
+    padding: 8px 18px; border-radius: 8px;
+    transform: rotate(-6deg);
+    text-transform: uppercase;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .faq details {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 14px;
+    padding: 16px 20px;
+    cursor: pointer;
+  }
+  .faq summary { font-weight: 800; font-size: 15px; list-style: none; position: relative; padding-right: 26px; }
+  .faq summary::after { content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%); color: var(--yellow); font-weight: 900; font-size: 20px; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { margin-top: 10px; font-size: 14.5px; color: var(--dim); line-height: 1.6; }
+
+  /* ---------- BUTTON ---------- */
+  .do-something { text-align: center; padding: 70px 0 90px; }
+  .big-btn {
+    font-size: 18px; font-weight: 900;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--bg);
+    background: linear-gradient(90deg, var(--yellow), #ffa94d);
+    border: none; border-radius: 16px;
+    padding: 20px 42px;
+    cursor: pointer;
+    box-shadow: 0 14px 40px rgba(255,217,61,.35);
+    transition: transform .12s;
+  }
+  .big-btn:active { transform: scale(.95); }
+  .btn-msg { margin-top: 18px; font-size: 14px; color: var(--dim); min-height: 20px; }
+
+  footer {
+    padding: 30px 0 44px;
+    text-align: center;
+    font-size: 12.5px;
+    color: #6b6b8d;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+
+  /* ---------- FLOATING EMOJI ---------- */
+  .zzz {
+    position: fixed;
+    bottom: -60px;
+    font-size: 26px;
+    opacity: .5;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 1;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: .5; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 60px 0 60px; }
+    .tl-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- floating 😴 emoji -->
+<div id="zzzContainer"></div>
+
+<header>
+  <div class="wrap">
+    <span class="official">⚡ Официальный сайт ⚡</span>
+    <h1>Максим Заморов</h1>
+    <div class="did">ничего <b>не делал</b></div>
+    <p class="hero-sub">
+      Ни-че-го. Совсем. Вообще. Ни одного дела за всё время наблюдений.
+      Мы следили. Мы записывали. Мы ничего не увидели.
+    </p>
+    <div class="verified">✅ Проверено очевидцами · 100% подтверждено</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="counter-box">
+    <div class="label">Максим ничего не делает уже</div>
+    <div class="timer" id="timer">…</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">📊 <em>Статистика</em> безделья</h2>
+    <div class="grid">
+      <div class="stat"><div class="num">0</div><div class="cap">Дел сделано</div></div>
+      <div class="stat"><div class="num red">0</div><div class="cap">Усилий приложено</div></div>
+      <div class="stat"><div class="num green">∞</div><div class="cap">Часов безделья</div></div>
+      <div class="stat"><div class="num purple">24/7</div><div class="cap">Режим работы</div></div>
+      <div class="stat"><div class="num">0</div><div class="cap">Полезного сделано</div></div>
+      <div class="stat"><div class="num red">0%</div><div class="cap">Продуктивность</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">📈 Прогресс <em>Максима</em></h2>
+    <div class="progress-block">
+      <div class="progress-title">График делания дел</div>
+      <div class="progress-sub">данные собираются в реальном времени</div>
+      <div class="bar"><div class="bar-fill"></div></div>
+      <div class="bar-pct">Выполнено: 0% (и это ещё щедро)</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">🕐 Один день <em>из жизни</em></h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-time">07:00</div><div class="tl-txt"><b>Подъём.</b> Проснулся. Уже ничего не делает. Даже глаза открывает с неохотой.</div></div>
+      <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-txt"><b>Утро.</b> Лежит. Смотрит в потолок. Потолок, по словам очевидцев, смотрит в ответ.</div></div>
+      <div class="tl-item"><div class="tl-time">13:00</div><div class="tl-txt"><b>Обед.</b> Ест. Технически это не «дело», это рефлекс. Засчитано как безделье с перекусом.</div></div>
+      <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-txt"><b>Вечер.</b> Собирался что-то сделать. Передумал. Устал от самого намерения.</div></div>
+      <div class="tl-item"><div class="tl-time">21:00</div><div class="tl-txt"><b>Ночной отчёт.</b> Итог дня: 0 дел. Идеально. Как всегда.</div></div>
+      <div class="tl-item"><div class="tl-time">23:59</div><div class="tl-txt"><b>Сон.</b> Спит. Во сне тоже ничего не делает — это подтвердили специалисты.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">💬 Отзывы <em>очевидцев</em></h2>
+    <div class="quotes">
+      <div class="quote"><p>Я видел его в четверг. Он сидел. Просто сидел. Это было красиво, но бесполезно.</p><div class="author">— Одноклассник</div></div>
+      <div class="quote"><p>Попросил его помочь. Он кивнул. Кивнул — и всё. Даже кивнул как-то лениво.</p><div class="author">— Свидетель №2</div></div>
+      <div class="quote"><p>Максим ничего не делал так убедительно, что мы рядом с ним тоже ничего не сделали.</p><div class="author">— Пострадавшие</div></div>
+      <div class="quote"><p>Десять из десяти. По безделью. В делах — ноль из десяти, и то с натяжкой.</p><div class="author">— Эксперт</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">🏅 Сертификат</h2>
+    <div class="cert">
+      <div class="medal">🏆</div>
+      <h3>Сертификат бездельника</h3>
+      <div class="sub">первой степени · с отличием</div>
+      <div class="name">Максим Заморов</div>
+      <p class="txt">
+        Настоящим подтверждается, что вышеупомянутый гражданин не сделал
+        абсолютно ничего выдающегося, полезного или хотя бы среднего.
+        Ноль дел. Пустота. Искусство ничего не делать доведено до совершенства.
+      </p>
+      <div class="stamp">✔ подтверждено</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">❓ Частые <em>вопросы</em></h2>
+    <div class="faq">
+      <details><summary>Правда ли, что Максим ничего не делал?</summary><p>Да. Это самый подтверждённый факт на этом сайте.</p></details>
+      <details><summary>А хоть что-нибудь он делал?</summary><p>Нет. Была версия, что он один раз что-то сделал, но проверка показала: это был сон.</p></details>
+      <details><summary>Может, он просто хорошо отдыхает?</summary><p>Отдых предполагает, что до этого была работа. У Максима — нет. Это не отдых, это стиль жизни.</p></details>
+      <details><summary>Можно ли научиться так же?</summary><p>Нет. Уровень Максима — врождённый талант. Годы тренировок. Хотя чем тренироваться, если можно не тренироваться?</p></details>
+      <details><summary>А если он что-то сделает, сайт удалят?</summary><p>Мы мониторим ситуацию 24/7. Пока что риск нулевой.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="do-something">
+  <button class="big-btn" id="doBtn">Заставить Максима что-то сделать</button>
+  <div class="btn-msg" id="btnMsg"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>😤 Мем-сайт «Максим Заморов ничего не делал» · создан с любовью и нулевой продуктивностью</div>
+    <div style="margin-top:8px; opacity:.8">Сайт сделан исключительно в шутку, для поднятия настроения. Максим, если ты это читаешь — прости, и сделай хоть что-нибудь 🙂</div>
+  </div>
+</footer>
+
+<script>
+// ---------- живой счётчик ----------
+const START = new Date('2026-09-01T00:00:00'); // пусть с начала учебного года
+const timerEl = document.getElementById('timer');
+const p2 = n => String(n).padStart(2, '0');
+function tick() {
+  let d = Math.max(0, Date.now() - START.getTime());
+  const days = Math.floor(d / 864e5); d -= days * 864e5;
+  const h = Math.floor(d / 36e5); d -= h * 36e5;
+  const m = Math.floor(d / 6e4); d -= m * 6e4;
+  const s = Math.floor(d / 1e3);
+  timerEl.innerHTML = days + ' <span>дн</span> ' + p2(h) + ' <span>ч</span> ' + p2(m) + ' <span>мин</span> ' + p2(s) + ' <span>сек</span>';
+}
+tick(); setInterval(tick, 1000);
+
+// ---------- кнопка "заставить сделать" ----------
+const btn = document.getElementById('doBtn');
+const msg = document.getElementById('btnMsg');
+const replies = [
+  '⏳ Инициализация... найдено дел: 0',
+  '🔍 Поиск активности Максима... не найдено',
+  '⚠ Ошибка 404: дела не обнаружены',
+  '📡 Сигнал отправлен... Максим не отреагировал',
+  '🛑 Попытка провалилась. Как всегда.',
+  '💤 Максим спит. Попробуй никогда.',
+  '🤖 Даже я не смог заставить его. А я робот.',
+];
+let clicks = 0;
+btn.addEventListener('click', () => {
+  clicks++;
+  msg.textContent = replies[clicks % replies.length];
+  if (clicks === 7) msg.textContent = '😤 Ладно. Признаю. Он неисправен.';
+});
+
+// ---------- летающие 😴 ----------
+const cont = document.getElementById('zzzContainer');
+const emo = ['😴', '💤', '🛋️', '🙈'];
+setInterval(() => {
+  const e = document.createElement('div');
+  e.className = 'zzz';
+  e.textContent = emo[(Math.random() * emo.length) | 0];
+  e.style.left = Math.random() * 94 + 'vw';
+  e.style.animationDuration = (6 + Math.random() * 7) + 's';
+  e.style.fontSize = (18 + Math.random() * 22) + 'px';
+  cont.appendChild(e);
+  setTimeout(() => e.remove(), 14000);
+}, 900);
+</script>
+</body>
+</html>
